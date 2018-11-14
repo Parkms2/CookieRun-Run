@@ -31,14 +31,12 @@ public:
 private:
 	SDL_Window * m_pWindow;
 	SDL_Renderer* m_pRenderer;
+	static Game* s_pInstance;
 	bool m_bRunning;
 	int m_currentFrame;
-
 	std::vector<GameObject*> basicCookie;
 	std::vector<GameObject*> backGround;
 	std::vector<GameObject*> floor;
 
-
-	static Game* s_pInstance;
 };
 typedef Game TheGame;

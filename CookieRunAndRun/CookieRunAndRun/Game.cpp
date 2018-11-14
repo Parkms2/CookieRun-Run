@@ -11,8 +11,8 @@ bool Game::init(const char*title, int xpos, int ypos, int width, int height, boo
 			m_bRunning = true;
 			SDL_SetRenderDrawColor(m_pRenderer, 0, 0, 0, 255);
 
-			TheAssetLoad::Instance()->assetLoads(m_pRenderer);
-			basicCookie.push_back(new Player(new LoaderParams(300, 508, 150, 100, "basicCookieRun")));
+			TheAssetLoad::Instance()->assetLoads(m_pRenderer);	//모든 에셋 소스를 로드시켜줌
+			basicCookie.push_back(new Player(new LoaderParams(300, 508, 150, 100, "basicCookieRun")));	//벡터 순서대로 행동이 정해져있음
 			basicCookie.push_back(new Player(new LoaderParams(200, 508, 150, 100, "basicCookieJump1")));
 			basicCookie.push_back(new Player(new LoaderParams(100, 508, 150, 100, "basicCookieJump2")));
 			basicCookie.push_back(new Player(new LoaderParams(500, 508, 150, 100, "basicCookieSlide")));
@@ -29,14 +29,13 @@ void Game::render() {
 	SDL_RenderPresent(m_pRenderer);
 }
 void Game::update() {
-	for (std::vector<GameObject*>::size_type i = 0;	i != basicCookie.size(); i++)	{
+	for (std::vector<GameObject*>::size_type i = 0; i != basicCookie.size(); i++) {
 		basicCookie[i]->update();
 	}
-
 }
+
 void Game::handleEvents() {
 	TheInputHandler::Instance()->update();
-
 }
 void Game::clean() {
 	std::cout << "cleaning game\n";

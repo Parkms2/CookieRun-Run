@@ -9,6 +9,8 @@ public:
 	virtual void draw();
 	virtual void update();
 	virtual void clean();
+	bool jump = false;
+	bool peek = false;	//점프 꼭지점
 private:
 	void handleInput();
 };
