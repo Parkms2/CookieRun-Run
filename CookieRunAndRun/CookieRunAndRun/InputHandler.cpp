@@ -42,9 +42,6 @@ bool InputHandler::isKeyDown(SDL_Scancode key) {
 			if (m_keystates[key] == m_keystates[SDL_SCANCODE_UP]) {
 				jump = true;
 			}
-			else if (m_keystates[key] == m_keystates[SDL_SCANCODE_DOWN]) {
-				slide = true;
-			}
 			return true;
 		}
 		else {

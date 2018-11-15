@@ -12,7 +12,7 @@ void PlayerAction::draw() {
 	if (TheInputHandler::Instance()->jump) {
 		m_action[1]->draw();
 	}
-	else if (TheInputHandler::Instance()->slide) {
+	else if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_DOWN)) {
 		m_action[3]->draw();
 	}
 	else {
