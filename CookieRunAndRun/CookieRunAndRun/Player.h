@@ -11,5 +11,5 @@ public:
 	virtual void clean();
 	bool peek = false;	//점프 꼭지점
 private:
-	void handleInput();
+	void handleInput(); 
 };
