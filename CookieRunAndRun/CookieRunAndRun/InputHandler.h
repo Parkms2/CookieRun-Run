@@ -15,6 +15,13 @@ public:
 	void update();
 	void clean();  // 디바이스 관련 초기화된 부분을 clear 
 	bool isKeyDown(SDL_Scancode key);
+	bool getMouseButtonState(int buttonNumber);
+	void onMouseButtonDown(SDL_Event event);
+	void onMouseButtonUp(SDL_Event event);
+	void onKeyDown();
+	void onKeyUp();
+
+
 	const Uint8* m_keystates;
 	enum mouse_buttons
 	{
@@ -23,13 +30,8 @@ public:
 		RIGHT = 2
 	};
 	std::vector<bool> m_mouseButtonStates;
+	bool jump = false;
 
-	bool getMouseButtonState(int buttonNumber);
-
-	void onMouseButtonDown(SDL_Event event);
-	void onMouseButtonUp(SDL_Event event);
-	void onKeyDown();
-	void onKeyUp();
 private:
 	InputHandler();
 	~InputHandler() {}

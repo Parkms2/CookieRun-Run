@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="floor">
+      <UniqueIdentifier>{9551c49d-4bce-4470-94a0-5ef420439099}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cookie">
+      <UniqueIdentifier>{746cd4f7-17ea-4e88-a6d7-389293eb0cae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="background">
+      <UniqueIdentifier>{12249888-8c02-4739-8e54-458e616347ba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -27,9 +36,6 @@
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="player.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="SDLGameObject.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -38,6 +44,21 @@
     </ClCompile>
     <ClCompile Include="assetLoad.cpp">
       <Filter>리소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="floorControl.cpp">
+      <Filter>floor</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>cookie</Filter>
+    </ClCompile>
+    <ClCompile Include="floor.cpp">
+      <Filter>floor</Filter>
+    </ClCompile>
+    <ClCompile Include="Background.cpp">
+      <Filter>background</Filter>
+    </ClCompile>
+    <ClCompile Include="backgroundControl.cpp">
+      <Filter>background</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -53,9 +74,6 @@
     <ClInclude Include="LoaderParams.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="SDLGameObject.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -67,6 +85,21 @@
     </ClInclude>
     <ClInclude Include="assetLoad.h">
       <Filter>리소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="floorControl.h">
+      <Filter>floor</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>cookie</Filter>
+    </ClInclude>
+    <ClInclude Include="floor.h">
+      <Filter>floor</Filter>
+    </ClInclude>
+    <ClInclude Include="background.h">
+      <Filter>background</Filter>
+    </ClInclude>
+    <ClInclude Include="backgroundControl.h">
+      <Filter>background</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

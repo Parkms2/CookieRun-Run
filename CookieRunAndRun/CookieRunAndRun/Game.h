@@ -7,7 +7,8 @@
 #include"Player.h"
 #include"InputHandler.h"
 #include"assetLoad.h"
-
+#include"floorControl.h"
+#include"backgroundControl.h"
 class Game {
 public:
 	Game() {}

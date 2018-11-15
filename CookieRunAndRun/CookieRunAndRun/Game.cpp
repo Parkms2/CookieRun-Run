@@ -13,9 +13,12 @@ bool Game::init(const char*title, int xpos, int ypos, int width, int height, boo
 
 			TheAssetLoad::Instance()->assetLoads(m_pRenderer);	//모든 에셋 소스를 로드시켜줌
 			basicCookie.push_back(new Player(new LoaderParams(300, 508, 150, 100, "basicCookieRun")));	//벡터 순서대로 행동이 정해져있음
-			basicCookie.push_back(new Player(new LoaderParams(200, 508, 150, 100, "basicCookieJump1")));
+			basicCookie.push_back(new Player(new LoaderParams(200, 508, 150, 100, "basicCookieJump1")));	//player에 있어야하나?
 			basicCookie.push_back(new Player(new LoaderParams(100, 508, 150, 100, "basicCookieJump2")));
 			basicCookie.push_back(new Player(new LoaderParams(500, 508, 150, 100, "basicCookieSlide")));
+
+			TheFloorControl::Instance()->initFloor();
+			TheBackgroundControl::Instance()->initBackground();
 		}
 		else return false;
 	}
@@ -23,16 +26,16 @@ bool Game::init(const char*title, int xpos, int ypos, int width, int height, boo
 }
 void Game::render() {
 	SDL_RenderClear(m_pRenderer);
-	for (std::vector<GameObject*>::size_type i = 0; i != basicCookie.size(); i++)	{
-		basicCookie[i]->draw();
-	}
+	TheBackgroundControl::Instance()->draw();
+	TheFloorControl::Instance()->draw();
+	basicCookie[0]->draw();
 	SDL_RenderPresent(m_pRenderer);
 }
 void Game::update() {
-	for (std::vector<GameObject*>::size_type i = 0; i != basicCookie.size(); i++) {
-		basicCookie[i]->update();
-	}
-}
+	TheBackgroundControl::Instance()->update();
+	TheFloorControl::Instance()->update();
+	basicCookie[0]->update();
+}	
 
 void Game::handleEvents() {
 	TheInputHandler::Instance()->update();

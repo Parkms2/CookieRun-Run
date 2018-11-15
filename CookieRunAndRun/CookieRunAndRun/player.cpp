@@ -17,22 +17,23 @@ void Player::clean()
 {
 }
 void Player::handleInput() {
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_UP) || jump) {
-		jump = true;
-		if (m_position.getY() == 130) {
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_UP)||TheInputHandler::Instance()->jump) {
+		if (m_position.getY() <= 348) {
 			peek = true;
 		}
-		else if (m_position.getY() == 300) {
+		if (m_position.getY() > 348 && !peek) {
+			m_velocity.setY(-6);
+		}
+		else if (m_position.getY() < 508 && peek) {
+			m_velocity.setY(6);
+		}
+		else if (m_position.getY() == 508) {
 			peek = false;
-		}
-		if (m_position.getY() > 130 && !peek) {
-			m_velocity.setY(-10);
-		}
-		if (m_position.getY() < 300 && peek) {
-			m_velocity.setY(10);
+			TheInputHandler::Instance()->jump = false;
+			m_velocity.setY(0);
 		}
 	}
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_DOWN))
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_DOWN))	//슬라이딩 구현하기
 	{
 		m_velocity.setY(2);
 	}

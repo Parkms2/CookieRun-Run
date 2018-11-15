@@ -5,9 +5,12 @@
 
 class SDLGameObject : public GameObject {
 public:
+	SDLGameObject() {}
 	SDLGameObject(const LoaderParams* pParams);
 	virtual void draw();
+	virtual void draw2();
 	virtual void update();
+	virtual void cookieUpdate();//행동별 이미지 변경?
 	virtual void clean();
 protected:
 	Vector2D m_position;

@@ -39,6 +39,9 @@ void InputHandler::update() {
 bool InputHandler::isKeyDown(SDL_Scancode key) {
 	if (m_keystates != 0) {
 		if (m_keystates[key] == 1) {
+			if (m_keystates[key] == m_keystates[SDL_SCANCODE_UP]) {
+				jump = true;
+			}
 			return true;
 		}
 		else {
