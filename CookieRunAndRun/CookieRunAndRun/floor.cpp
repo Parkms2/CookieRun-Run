@@ -16,16 +16,6 @@ void Floor::update()	//정상적인 방법이 아님
 		m_position.setX(myPosition);
 	}
 	SDLGameObject::update();
-	/*if (m_destinationRectangleFloor.x <= -m_sourceRectangleFloor.w) {
-	m_destinationRectangleFloor.x = m_sourceRectangleFloor.w;
-}
-if (m_destinationRectangleFloor2.x <= -m_sourceRectangleFloor2.w) {
-	m_destinationRectangleFloor2.x = m_sourceRectangleFloor2.w;
-}
-if (tick % 10 == 0) {
-	m_destinationRectangleFloor.x -= 4;
-	m_destinationRectangleFloor2.x -= 4;
-}*/
 }
 void Floor::clean()
 {
