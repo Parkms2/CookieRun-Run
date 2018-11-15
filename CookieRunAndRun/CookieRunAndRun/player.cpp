@@ -13,6 +13,9 @@ void Player::update()
 	if (TheInputHandler::Instance()->jump) {
 		m_currentFrame = int(((SDL_GetTicks() / 100) % 3));// 화살표 윗키누르면 if(윗키눌렀음) 3장나눔 하고 다시 bool false로 변경 - 흠
 	}
+	else if (TheInputHandler::Instance()->slide) {
+		m_currentFrame = int(((SDL_GetTicks() / 100) % 2));
+	}
 	else {
 		m_currentFrame = int(((SDL_GetTicks() / 100) % 4));// 화살표 윗키누르면 if(윗키눌렀음) 3장나눔 하고 다시 bool false로 변경 - 흠
 	}
@@ -38,8 +41,8 @@ void Player::handleInput() {
 			m_velocity.setY(0);
 		}
 	}
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_DOWN))	//슬라이딩 구현하기
-	{
-		m_velocity.setY(2);
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_DOWN)) {
+		m_velocity.setX(0);
+		m_velocity.setY(0);
 	}
 }

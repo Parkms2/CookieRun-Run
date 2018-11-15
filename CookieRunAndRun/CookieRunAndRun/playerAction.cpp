@@ -12,6 +12,9 @@ void PlayerAction::draw() {
 	if (TheInputHandler::Instance()->jump) {
 		m_action[1]->draw();
 	}
+	else if (TheInputHandler::Instance()->slide) {
+		m_action[3]->draw();
+	}
 	else {
 		m_action[0]->draw();
 	}
@@ -19,5 +22,5 @@ void PlayerAction::draw() {
 void PlayerAction::update() {
 	m_action[0]->update();
 	m_action[1]->update();
-
+	m_action[3]->update();
 }
