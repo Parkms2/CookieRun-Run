@@ -1,8 +1,7 @@
 #pragma once
 #include<vector>
-#include"SDLGameObject.h"
 #include"background.h"
-#include"TextureManager.h"
+
 
 class BackgroundControl {
 public:

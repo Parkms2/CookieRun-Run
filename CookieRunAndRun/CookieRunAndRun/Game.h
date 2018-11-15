@@ -9,6 +9,7 @@
 #include"assetLoad.h"
 #include"floorControl.h"
 #include"backgroundControl.h"
+#include"playerAction.h"
 class Game {
 public:
 	Game() {}

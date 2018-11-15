@@ -10,7 +10,12 @@ void Player::draw()
 void Player::update()
 {
 	handleInput(); // add our function
-	m_currentFrame = int(((SDL_GetTicks() / 100) % 4));// 화살표 윗키누르면 if(윗키눌렀음) 3장나눔 하고 다시 bool false로 변경 - 흠
+	if (TheInputHandler::Instance()->jump) {
+		m_currentFrame = int(((SDL_GetTicks() / 100) % 3));// 화살표 윗키누르면 if(윗키눌렀음) 3장나눔 하고 다시 bool false로 변경 - 흠
+	}
+	else {
+		m_currentFrame = int(((SDL_GetTicks() / 100) % 4));// 화살표 윗키누르면 if(윗키눌렀음) 3장나눔 하고 다시 bool false로 변경 - 흠
+	}
 	SDLGameObject::update();
 }
 void Player::clean()
