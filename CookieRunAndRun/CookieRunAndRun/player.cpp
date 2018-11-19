@@ -55,7 +55,7 @@ void Player::handleInput() {
 			m_velocity.setY(-6);
 		}
 	}
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_DOWN)) {
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_DOWN) && !TheInputHandler::Instance()->jump) {
 		m_position.setY(558);
 	}
 }
