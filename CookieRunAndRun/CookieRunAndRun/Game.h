@@ -4,12 +4,11 @@
 #include<vector>
 #include"TextureManager.h"
 #include"GameObject.h"
-#include"Player.h"
 #include"InputHandler.h"
 #include"assetLoad.h"
-#include"floorControl.h"
-#include"backgroundControl.h"
-#include"playerAction.h"
+
+#include"GameStateMachine.h"
+#include"PlayState.h"
 class Game {
 public:
 	Game() {}
@@ -30,15 +29,14 @@ public:
 		}
 		return s_pInstance;
 	}
+	GameStateMachine* m_pGameStateMachine;
 private:
 	SDL_Window * m_pWindow;
 	SDL_Renderer* m_pRenderer;
 	static Game* s_pInstance;
 	bool m_bRunning;
 	int m_currentFrame;
-	std::vector<GameObject*> basicCookie;
-	std::vector<GameObject*> backGround;
-	std::vector<GameObject*> floor;
 
+	bool NowStart = true;
 };
 typedef Game TheGame;

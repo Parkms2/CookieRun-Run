@@ -11,10 +11,9 @@ bool Game::init(const char*title, int xpos, int ypos, int width, int height, boo
 			m_bRunning = true;
 			SDL_SetRenderDrawColor(m_pRenderer, 0, 0, 0, 255);
 
-			TheAssetLoad::Instance()->assetLoads(m_pRenderer);	//모든 에셋 소스를 로드시켜줌
-			ThePlayerAction::Instance()->initAction();
-			TheFloorControl::Instance()->initFloor();
-			TheBackgroundControl::Instance()->initBackground();
+			m_pGameStateMachine = new GameStateMachine();
+			m_pGameStateMachine->firstState();	//시작시 메인메뉴
+
 		}
 		else return false;
 	}
@@ -22,19 +21,20 @@ bool Game::init(const char*title, int xpos, int ypos, int width, int height, boo
 }
 void Game::render() {
 	SDL_RenderClear(m_pRenderer);
-	TheBackgroundControl::Instance()->draw();
-	TheFloorControl::Instance()->draw();
-	ThePlayerAction::Instance()->draw();
+	m_pGameStateMachine->render();
 	SDL_RenderPresent(m_pRenderer);
 }
 void Game::update() {
-	TheBackgroundControl::Instance()->update();
-	TheFloorControl::Instance()->update();
-	ThePlayerAction::Instance()->update();
+	m_pGameStateMachine->update();
 }	
 
 void Game::handleEvents() {
 	TheInputHandler::Instance()->update();
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_ESCAPE) && NowStart)	//게임 시작
+	{
+		m_pGameStateMachine->changeState(PlayState::Instance());
+		NowStart = false;
+	}
 }
 void Game::clean() {
 	std::cout << "cleaning game\n";

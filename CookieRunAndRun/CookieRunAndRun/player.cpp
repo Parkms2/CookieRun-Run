@@ -28,34 +28,25 @@ void Player::clean()
 {
 }
 void Player::handleInput() {
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_UP) || TheInputHandler::Instance()->jump) {	//점프 방식부터 잘못된듯
-		//한번 눌림이아니라 아주 잠깐 키다운이 되는 상황 -> 한번 누르기만 하면 실행되는걸로 바꾸기
-		if (m_position.getY() <= 368) {
+	if ((TheInputHandler::Instance()->jump || TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_UP)) && !TheInputHandler::Instance()->slide) {
+		if (m_position.getY() <= 368) {	//점프의 정점
 			m_velocity.setY(0);
 			peek = true;
 		}
-		if (m_position.getY() > 368 && !peek) {
+		if (m_position.getY() > 368 && !peek) {		//위로 올라감
 			m_velocity.setY(-6);
 		}
-		else if (m_position.getY() < 508 && peek) {
+		else if (m_position.getY() < 508 && peek) {	//아래로 내려감
 			m_velocity.setY(6);
 		}
-		else if (m_position.getY() == 508 || m_position.getY() == 514) {
+		else if (m_position.getY() == 508 || m_position.getY() == 514) {	//점프후 다시 내려옴
 			peek = false;
 			TheInputHandler::Instance()->jump = false;
 		}
 
-		if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_UP)) {		//이방식 뭔가 이상함 -> 키다운 방식을 버튼클릭방식으로
-			TheInputHandler::Instance()->jump = false;
-			TheInputHandler::Instance()->doubleJump = true;
-		}
+		//더블점프는 구현 어떻게 할까?
 	}
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_UP) && TheInputHandler::Instance()->doubleJump) {	//흠..
-		if (m_position.getY() > 368) {
-			m_velocity.setY(-6);
-		}
-	}
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_DOWN) && !TheInputHandler::Instance()->jump) {
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_DOWN) && !TheInputHandler::Instance()->jump) {	//슬라이딩
 		m_position.setY(558);
 	}
 }

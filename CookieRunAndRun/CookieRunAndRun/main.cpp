@@ -10,7 +10,7 @@ int main(int argc, char* argv[])
 	int frameTick = 0; 
 	int prevFrameTick = 0;
 	std::cout << "game init attempt...\n";
-	if (TheGame::Instance()->init("Chapter 1", 100, 100,1280, 720, false)) {
+	if (TheGame::Instance()->init("¿Í! ÄíÅ°·±!", 100, 100,1280, 720, false)) {
 		std::cout << "game init success!\n";
 
 		while (TheGame::Instance()->running()) {

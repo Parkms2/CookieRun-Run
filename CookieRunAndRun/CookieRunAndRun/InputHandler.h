@@ -31,6 +31,7 @@ public:
 	};
 	std::vector<bool> m_mouseButtonStates;
 	bool jump = false;
+	bool slide = false;
 	bool doubleJump = false;
 private:
 	InputHandler();

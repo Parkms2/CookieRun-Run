@@ -9,7 +9,8 @@ public:
 		}
 		return s_pInstance;
 	}
-	bool assetLoads(SDL_Renderer* m_pRenderer);
+	bool assetLoadsPlay(SDL_Renderer* m_pRenderer);
+	bool assetLoadsMenu(SDL_Renderer* m_pRenderer);
 private:
 	static assetLoad* s_pInstance;
 };

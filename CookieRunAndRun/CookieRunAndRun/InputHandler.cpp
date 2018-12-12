@@ -39,8 +39,14 @@ void InputHandler::update() {
 bool InputHandler::isKeyDown(SDL_Scancode key) {
 	if (m_keystates != 0) {
 		if (m_keystates[key] == 1) {
-			if (m_keystates[key] == m_keystates[SDL_SCANCODE_UP]) {
+			if (m_keystates[key] == m_keystates[SDL_SCANCODE_UP] && jump == false && slide == false) {
 				jump = true;
+			}
+			if (m_keystates[key] == m_keystates[SDL_SCANCODE_DOWN] && jump == false && slide == false) {	//슬라이딩중 점프가 되는걸 방지하기위해
+				slide = true;
+			}
+			else if (m_keystates[key] != m_keystates[SDL_SCANCODE_DOWN] && slide == true) {		//슬라이드 끝나면 slide = false
+				slide = false;
 			}
 			return true;
 		}

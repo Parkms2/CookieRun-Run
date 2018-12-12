@@ -22,13 +22,13 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="UI">
+    <Filter Include="state">
       <UniqueIdentifier>{d786a536-bbff-430a-8975-d5128d2973a4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="UI\mainmenu">
+    <Filter Include="state\mainmenu">
       <UniqueIdentifier>{24518a36-7534-4cf0-80fb-e0c1101f5f33}</UniqueIdentifier>
     </Filter>
-    <Filter Include="UI\InGame">
+    <Filter Include="state\InGame">
       <UniqueIdentifier>{fc788a00-1045-4d2a-8e91-136b564114ba}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -72,6 +72,18 @@
     <ClCompile Include="playerAction.cpp">
       <Filter>cookie</Filter>
     </ClCompile>
+    <ClCompile Include="GameStateMachine.cpp">
+      <Filter>state</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayState.cpp">
+      <Filter>state\InGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Menustate.cpp">
+      <Filter>state\mainmenu</Filter>
+    </ClCompile>
+    <ClCompile Include="mainMenu.cpp">
+      <Filter>state\mainmenu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -98,9 +110,6 @@
     <ClInclude Include="assetLoad.h">
       <Filter>리소스 파일</Filter>
     </ClInclude>
-    <ClInclude Include="floorControl.h">
-      <Filter>floor</Filter>
-    </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>cookie</Filter>
     </ClInclude>
@@ -115,6 +124,24 @@
     </ClInclude>
     <ClInclude Include="playerAction.h">
       <Filter>cookie</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>state</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStateMachine.h">
+      <Filter>state</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayState.h">
+      <Filter>state\InGame</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuState.h">
+      <Filter>state\mainmenu</Filter>
+    </ClInclude>
+    <ClInclude Include="floorControl.h">
+      <Filter>floor</Filter>
+    </ClInclude>
+    <ClInclude Include="mainMenu.h">
+      <Filter>state\mainmenu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

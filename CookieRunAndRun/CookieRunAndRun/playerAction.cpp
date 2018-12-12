@@ -9,13 +9,13 @@ void PlayerAction::initAction() {
 }
 
 void PlayerAction::draw() {
-	if (TheInputHandler::Instance()->jump) {
+	if (TheInputHandler::Instance()->jump)  {	//점프모션
 		m_action[1]->draw();
 	}
-	else if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_DOWN)) {
+	else if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_DOWN)) {		//슬라이딩 모션
 		m_action[3]->draw();
 	}
-	else {
+	else {		//일반 달리기 모션
 		m_action[0]->draw();
 	}
 }
