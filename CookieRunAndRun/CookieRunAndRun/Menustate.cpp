@@ -8,6 +8,9 @@ void MenuState::update()
 	for (std::vector<GameObject*>::size_type i = 0; i < main_bg.size(); i++) {
 		main_bg[i]->update();
 	}
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_ESCAPE))	{//게임 시작		나중에 이게 메인메뉴에있어야함
+		TheGameStateMachine::Instance()->changeState(PlayState::Instance());
+	}
 }
 
 void MenuState::render()

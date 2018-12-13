@@ -1,5 +1,7 @@
 #include"GameStateMachine.h"
 
+GameStateMachine* GameStateMachine::s_pInstance = 0;
+
 void GameStateMachine::firstState() {
 	m_gameStates.push_back(MenuState::Instance());
 	m_gameStates.back()->onEnter();

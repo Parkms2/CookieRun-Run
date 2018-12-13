@@ -1,4 +1,5 @@
 #include "PlayState.h"
+#include"popupPauseState.h"
 #include"Player.h"
 #include"floorControl.h"
 #include"backgroundControl.h"
@@ -11,6 +12,9 @@ void PlayState::update()
 	TheBackgroundControl::Instance()->update();
 	TheFloorControl::Instance()->update();
 	ThePlayerAction::Instance()->update();
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_ESCAPE)) {
+		TheGameStateMachine::Instance()->changeState(PopupPauseState::Instance());
+	}
 }
 void PlayState::render()
 {

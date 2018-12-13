@@ -36,7 +36,5 @@ private:
 	static Game* s_pInstance;
 	bool m_bRunning;
 	int m_currentFrame;
-
-	bool NowStart = true;
 };
 typedef Game TheGame;

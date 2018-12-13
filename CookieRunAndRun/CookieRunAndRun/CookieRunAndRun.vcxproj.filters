@@ -31,6 +31,9 @@
     <Filter Include="state\InGame">
       <UniqueIdentifier>{fc788a00-1045-4d2a-8e91-136b564114ba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="state\popupPause">
+      <UniqueIdentifier>{4d7732fb-fe88-405c-9933-3a3cb4fb1afe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -83,6 +86,9 @@
     </ClCompile>
     <ClCompile Include="mainMenu.cpp">
       <Filter>state\mainmenu</Filter>
+    </ClCompile>
+    <ClCompile Include="popupPauseState.cpp">
+      <Filter>state\popupPause</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +148,9 @@
     </ClInclude>
     <ClInclude Include="mainMenu.h">
       <Filter>state\mainmenu</Filter>
+    </ClInclude>
+    <ClInclude Include="popupPauseState.h">
+      <Filter>state\popupPause</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
