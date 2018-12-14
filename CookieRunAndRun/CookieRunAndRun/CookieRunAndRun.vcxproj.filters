@@ -34,6 +34,9 @@
     <Filter Include="state\popupPause">
       <UniqueIdentifier>{4d7732fb-fe88-405c-9933-3a3cb4fb1afe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="state\button">
+      <UniqueIdentifier>{c7d21ee4-4d16-4ef3-9f08-05ebb71f9d4b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -89,6 +92,12 @@
     </ClCompile>
     <ClCompile Include="popupPauseState.cpp">
       <Filter>state\popupPause</Filter>
+    </ClCompile>
+    <ClCompile Include="pauseDraw.cpp">
+      <Filter>state\popupPause</Filter>
+    </ClCompile>
+    <ClCompile Include="button.cpp">
+      <Filter>state\button</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +160,12 @@
     </ClInclude>
     <ClInclude Include="popupPauseState.h">
       <Filter>state\popupPause</Filter>
+    </ClInclude>
+    <ClInclude Include="pauseDraw.h">
+      <Filter>state\popupPause</Filter>
+    </ClInclude>
+    <ClInclude Include="button.h">
+      <Filter>state\button</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

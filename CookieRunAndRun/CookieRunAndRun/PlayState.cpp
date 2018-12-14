@@ -9,18 +9,31 @@ const std::string PlayState::s_playID = "PLAY";
 PlayState* PlayState::s_pInstance = 0;
 void PlayState::update()
 {
-	TheBackgroundControl::Instance()->update();
-	TheFloorControl::Instance()->update();
-	ThePlayerAction::Instance()->update();
-	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_ESCAPE)) {
-		TheGameStateMachine::Instance()->changeState(PopupPauseState::Instance());
+	if (!PopupPauseState::Instance()->stopUpdate) {	//일시정지가 아니면 실행
+		TheBackgroundControl::Instance()->update();
+		TheFloorControl::Instance()->update();
+		ThePlayerAction::Instance()->update();
+		if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_Q)) {
+			TheGameStateMachine::Instance()->PopupState(PopupPauseState::Instance());
+		}
+	}
+	else if (PopupPauseState::Instance()->stopUpdate) {	//일시정지면 실행
+		PopupPauseState::Instance()->update();
+		if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_ESCAPE)) {	//일시정지
+			TheGameStateMachine::Instance()->finishPopupState(PopupPauseState::Instance());
+		}
 	}
 }
 void PlayState::render()
 {
-	TheBackgroundControl::Instance()->draw();
-	TheFloorControl::Instance()->draw();
-	ThePlayerAction::Instance()->draw();
+	if (!PopupPauseState::Instance()->stopUpdate) {	//일시정지가 아니면 실행
+		TheBackgroundControl::Instance()->draw();
+		TheFloorControl::Instance()->draw();
+		ThePlayerAction::Instance()->draw();
+	}
+	else if (PopupPauseState::Instance()->stopUpdate) { //일시정지면 실행
+		PopupPauseState::Instance()->render();
+	}
 }
 bool PlayState::onEnter()
 {

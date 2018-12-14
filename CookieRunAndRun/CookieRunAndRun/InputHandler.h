@@ -15,7 +15,10 @@ public:
 	void update();
 	void clean();  // 디바이스 관련 초기화된 부분을 clear 
 	bool isKeyDown(SDL_Scancode key);
+
+	Vector2D* m_mousePosition;
 	bool getMouseButtonState(int buttonNumber);
+	Vector2D* getMousePosition();
 	void onMouseButtonDown(SDL_Event event);
 	void onMouseButtonUp(SDL_Event event);
 	void onKeyDown();

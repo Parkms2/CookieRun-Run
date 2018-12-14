@@ -13,6 +13,8 @@ public:
 	}
 	void firstState();
 	void changeState(GameState* pState);
+	void PopupState(GameState* pState);
+	void finishPopupState(GameState* pState);
 	void pushState(GameState *pState);
 	void popState();
 	virtual void update();

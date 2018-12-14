@@ -133,6 +133,7 @@
     <ClCompile Include="assetLoad.cpp" />
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="backgroundControl.cpp" />
+    <ClCompile Include="button.cpp" />
     <ClCompile Include="floor.cpp" />
     <ClCompile Include="floorControl.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -142,6 +143,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainMenu.cpp" />
     <ClCompile Include="Menustate.cpp" />
+    <ClCompile Include="pauseDraw.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="playerAction.cpp" />
     <ClCompile Include="PlayState.cpp" />
@@ -153,6 +155,7 @@
     <ClInclude Include="assetLoad.h" />
     <ClInclude Include="background.h" />
     <ClInclude Include="backgroundControl.h" />
+    <ClInclude Include="button.h" />
     <ClInclude Include="floor.h" />
     <ClInclude Include="floorControl.h" />
     <ClInclude Include="Game.h" />
@@ -163,6 +166,7 @@
     <ClInclude Include="LoaderParams.h" />
     <ClInclude Include="mainMenu.h" />
     <ClInclude Include="MenuState.h" />
+    <ClInclude Include="pauseDraw.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="playerAction.h" />
     <ClInclude Include="PlayState.h" />
