@@ -133,6 +133,7 @@
     <ClCompile Include="assetLoad.cpp" />
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="backgroundControl.cpp" />
+    <ClCompile Include="blur.cpp" />
     <ClCompile Include="button.cpp" />
     <ClCompile Include="floor.cpp" />
     <ClCompile Include="floorControl.cpp" />
@@ -155,6 +156,7 @@
     <ClInclude Include="assetLoad.h" />
     <ClInclude Include="background.h" />
     <ClInclude Include="backgroundControl.h" />
+    <ClInclude Include="blur.h" />
     <ClInclude Include="button.h" />
     <ClInclude Include="floor.h" />
     <ClInclude Include="floorControl.h" />

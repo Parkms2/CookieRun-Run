@@ -15,7 +15,6 @@ public:
 	bool load(string fileName, string id, SDL_Renderer* pRenderer);
 	bool backLoad(string fileName, string id, SDL_Renderer* pRenderer);
 	bool screenShotLoad(string id, SDL_Surface* screenShot, SDL_Renderer* pRenderer);
-	bool blurImageDraw(SDL_Surface *image, int blur_extent);	//이미지를 블러처리 해줌      (블러처리할 이미지, 블러 강도)
 	void draw(string id, int x, int y, int width, int height, int current, SDL_Renderer* pRenderer, SDL_RendererFlip flip = SDL_FLIP_NONE);
 	void drawFrame(string id, int x, int y, int width, int height, int currentRow, int currentFrame, SDL_Renderer* pRenderer, SDL_RendererFlip flip = SDL_FLIP_NONE);
 	static TextureManager* Instance() {
@@ -25,6 +24,9 @@ public:
 		}
 		return s_pInstance;
 	}
+
+
+	bool test(SDL_Surface *image, int r);
 };
 
 typedef TextureManager TheTextureManager;

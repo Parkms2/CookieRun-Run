@@ -37,6 +37,9 @@
     <Filter Include="state\button">
       <UniqueIdentifier>{c7d21ee4-4d16-4ef3-9f08-05ebb71f9d4b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="blur">
+      <UniqueIdentifier>{1138c52f-ca57-48d3-8683-cc61cfe0693e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -98,6 +101,9 @@
     </ClCompile>
     <ClCompile Include="button.cpp">
       <Filter>state\button</Filter>
+    </ClCompile>
+    <ClCompile Include="blur.cpp">
+      <Filter>blur</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +172,9 @@
     </ClInclude>
     <ClInclude Include="button.h">
       <Filter>state\button</Filter>
+    </ClInclude>
+    <ClInclude Include="blur.h">
+      <Filter>blur</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
