@@ -2,6 +2,7 @@
 #include"InputHandler.h"
 MenuButton::MenuButton(const LoaderParams* pParams, void(*callback)()) : SDLGameObject(pParams), m_callback(callback)
 {
+	firstPosition = this->m_position.getX();
 }
 void MenuButton::draw()
 {
@@ -27,6 +28,14 @@ void MenuButton::update() {
 	else {
 		m_currentFrame = MOUSE_OUT;
 	}
+
+	if (this->m_width == 340) {
+		if (this->m_position.getX() < firstPosition - 300) {
+			this->m_velocity.setX(0);
+		}
+		else this->m_velocity.setX(-10);
+	}
+	SDLGameObject::update();
 }
 void MenuButton::clean()
 {

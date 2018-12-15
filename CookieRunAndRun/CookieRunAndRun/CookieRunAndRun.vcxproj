@@ -144,6 +144,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainMenu.cpp" />
     <ClCompile Include="Menustate.cpp" />
+    <ClCompile Include="pauseButtonControl.cpp" />
     <ClCompile Include="pauseDraw.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="playerAction.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="LoaderParams.h" />
     <ClInclude Include="mainMenu.h" />
     <ClInclude Include="MenuState.h" />
+    <ClInclude Include="pauseButtonControl.h" />
     <ClInclude Include="pauseDraw.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="playerAction.h" />

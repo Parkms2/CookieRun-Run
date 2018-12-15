@@ -29,6 +29,16 @@ bool assetLoad::assetLoadsMenu(SDL_Renderer* m_pRenderer) {
 	if (!TheTextureManager::Instance()->load("assets/mainmenu/mainLobby_bg.png", "mainLobby_bg", m_pRenderer)) return false;	//메인메뉴의 로비 백그라운드 화면
 	if (!TheTextureManager::Instance()->load("assets/mainmenu/changeChar_bg.png", "changeChar_bg", m_pRenderer)) return false;	//캐릭터 교체화면의 백그라운드 화면
 
+	//메인 메뉴 버튼
+	if (!TheTextureManager::Instance()->load("assets/button/mainmenu/1gamestart.png", "1gamestart", m_pRenderer)) return false;
+	if (!TheTextureManager::Instance()->load("assets/button/mainmenu/2changeCookie.png", "2changeCookie", m_pRenderer)) return false;
+	if (!TheTextureManager::Instance()->load("assets/button/mainmenu/3dnsQKfakdrpa.png", "3dnsQKfakdrpa", m_pRenderer)) return false;
+	if (!TheTextureManager::Instance()->load("assets/button/mainmenu/4recode.png", "4recode", m_pRenderer)) return false;
+
+	//메인 메뉴 쿠키
+	if (!TheTextureManager::Instance()->load("assets/characters/basicsCookie/lobbyBasic1.png", "lobbyBasic1", m_pRenderer)) return false;
+	if (!TheTextureManager::Instance()->load("assets/characters/basicsCookie/lobbyBasic2.png", "lobbyBasic2", m_pRenderer)) return false;
+
 	return true;
 }
 bool assetLoad::assetLoadsPopupPause(SDL_Renderer* m_pRenderer) {

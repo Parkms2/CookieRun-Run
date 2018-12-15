@@ -8,7 +8,4 @@ public:
 	virtual void draw();
 	virtual void update();
 	virtual void clean();
-private:
-	SDL_Surface *sshot;
-	SDL_Surface *sshot2;
 };

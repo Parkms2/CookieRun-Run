@@ -40,6 +40,9 @@
     <Filter Include="blur">
       <UniqueIdentifier>{1138c52f-ca57-48d3-8683-cc61cfe0693e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="cookie\basicCookie">
+      <UniqueIdentifier>{eaca0a52-cee8-4e49-ac07-440a952160ba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -65,9 +68,6 @@
     </ClCompile>
     <ClCompile Include="floorControl.cpp">
       <Filter>floor</Filter>
-    </ClCompile>
-    <ClCompile Include="player.cpp">
-      <Filter>cookie</Filter>
     </ClCompile>
     <ClCompile Include="floor.cpp">
       <Filter>floor</Filter>
@@ -105,6 +105,12 @@
     <ClCompile Include="blur.cpp">
       <Filter>blur</Filter>
     </ClCompile>
+    <ClCompile Include="pauseButtonControl.cpp">
+      <Filter>state\popupPause</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>cookie\basicCookie</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -130,9 +136,6 @@
     </ClInclude>
     <ClInclude Include="assetLoad.h">
       <Filter>리소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>cookie</Filter>
     </ClInclude>
     <ClInclude Include="floor.h">
       <Filter>floor</Filter>
@@ -175,6 +178,12 @@
     </ClInclude>
     <ClInclude Include="blur.h">
       <Filter>blur</Filter>
+    </ClInclude>
+    <ClInclude Include="pauseButtonControl.h">
+      <Filter>state\popupPause</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>cookie\basicCookie</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

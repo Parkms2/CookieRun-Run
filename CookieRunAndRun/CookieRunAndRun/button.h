@@ -18,4 +18,6 @@ public:
 
 	void(*m_callback)();
 	bool m_bReleased;
+private:
+	int firstPosition;
 };
