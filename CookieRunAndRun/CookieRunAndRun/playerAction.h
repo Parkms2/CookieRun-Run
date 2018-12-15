@@ -15,7 +15,9 @@ public:
 	void initAction();
 	void draw();
 	void update();
+	void clean();
 	std::vector<GameObject*> m_action;
+	int getPosition();
 private:
 	static PlayerAction* s_pInstance;
 };

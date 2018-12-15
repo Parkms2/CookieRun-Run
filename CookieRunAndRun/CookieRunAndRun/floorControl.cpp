@@ -18,5 +18,5 @@ void FloorControl::update()
 	}
 }
 void FloorControl::clean(){
-
+	m_floor.clear();
 }

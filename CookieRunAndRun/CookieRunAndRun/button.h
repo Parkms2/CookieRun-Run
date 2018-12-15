@@ -4,8 +4,8 @@
 enum button_state
 {
 	MOUSE_OUT = 0,
-	MOUSE_OVER = 1,
-	CLICKED = 2
+	MOUSE_OVER = 0,
+	CLICKED = 0
 };
 
 class MenuButton : public SDLGameObject

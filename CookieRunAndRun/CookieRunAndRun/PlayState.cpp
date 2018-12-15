@@ -13,15 +13,12 @@ void PlayState::update()
 		TheBackgroundControl::Instance()->update();
 		TheFloorControl::Instance()->update();
 		ThePlayerAction::Instance()->update();
-		if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_Q)) {
-			TheGameStateMachine::Instance()->PopupState(PopupPauseState::Instance());
+		if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_ESCAPE)) {
+			TheGame::Instance()->getStateMachine()->PopupState(PopupPauseState::Instance());
 		}
 	}
 	else if (PopupPauseState::Instance()->stopUpdate) {	//일시정지면 실행
 		PopupPauseState::Instance()->update();
-		if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_ESCAPE)) {	//일시정지
-			TheGameStateMachine::Instance()->finishPopupState(PopupPauseState::Instance());
-		}
 	}
 }
 void PlayState::render()
@@ -47,6 +44,9 @@ bool PlayState::onEnter()
 
 bool PlayState::onExit()
 {
+	ThePlayerAction::Instance()->clean();
+	TheFloorControl::Instance()->clean();
+	TheBackgroundControl::Instance()->clean();
 	std::cout << "exiting PlayState\n";
 	return true;
 }

@@ -6,7 +6,6 @@ bool assetLoad::assetLoadsPlay(SDL_Renderer* m_pRenderer) {
 	//기본 쿠키
 	if (!TheTextureManager::Instance()->load("assets/characters/basicsCookie/run.png", "basicCookieRun", m_pRenderer)) return false;
 	if (!TheTextureManager::Instance()->load("assets/characters/basicsCookie/jump1-1.png", "basicCookieJump1", m_pRenderer)) return false;	
-	if (!TheTextureManager::Instance()->load("assets/characters/basicsCookie/jump.png", "basicCookieJump2", m_pRenderer)) return false;
 	if (!TheTextureManager::Instance()->load("assets/characters/basicsCookie/slide.png", "basicCookieSlide", m_pRenderer)) return false;
 
 	//xx 쿠키
@@ -30,5 +29,12 @@ bool assetLoad::assetLoadsMenu(SDL_Renderer* m_pRenderer) {
 	if (!TheTextureManager::Instance()->load("assets/mainmenu/mainLobby_bg.png", "mainLobby_bg", m_pRenderer)) return false;	//메인메뉴의 로비 백그라운드 화면
 	if (!TheTextureManager::Instance()->load("assets/mainmenu/changeChar_bg.png", "changeChar_bg", m_pRenderer)) return false;	//캐릭터 교체화면의 백그라운드 화면
 
+	return true;
+}
+bool assetLoad::assetLoadsPopupPause(SDL_Renderer* m_pRenderer) {
+	if (!TheTextureManager::Instance()->load("assets/button/popupPause/pauseText.png", "pauseText", m_pRenderer)) return false;
+	if (!TheTextureManager::Instance()->load("assets/button/popupPause/resumeButton.png", "resumeButton", m_pRenderer)) return false;
+	if (!TheTextureManager::Instance()->load("assets/button/popupPause/stopButton.png", "stopButton", m_pRenderer)) return false;
+	if (!TheTextureManager::Instance()->load("assets/button/popupPause/resumeTimer.png", "resumeTimer", m_pRenderer)) return false;
 	return true;
 }

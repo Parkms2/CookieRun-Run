@@ -10,8 +10,8 @@ bool Game::init(const char*title, int xpos, int ypos, int width, int height, boo
 			m_pRenderer = SDL_CreateRenderer(m_pWindow, -1, 0);
 			m_bRunning = true;
 			SDL_SetRenderDrawColor(m_pRenderer, 0, 0, 0, 255);
-
-			TheGameStateMachine::Instance()->firstState();	//시작시 메인메뉴
+			m_pGameStateMachine = new GameStateMachine();
+			m_pGameStateMachine->firstState();
 
 		}
 		else return false;
@@ -20,11 +20,11 @@ bool Game::init(const char*title, int xpos, int ypos, int width, int height, boo
 }
 void Game::render() {
 	SDL_RenderClear(m_pRenderer);
-	TheGameStateMachine::Instance()->render();
+	m_pGameStateMachine->render();
 	SDL_RenderPresent(m_pRenderer);
 }
 void Game::update() {
-	TheGameStateMachine::Instance()->update();
+	m_pGameStateMachine->update();
 }	
 
 void Game::handleEvents() {

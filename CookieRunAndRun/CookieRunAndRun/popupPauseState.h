@@ -15,11 +15,18 @@ public:
 	virtual void update();
 	virtual void render();
 	virtual bool onEnter();
+	bool delayOnExit();
 	virtual bool onExit();
 	virtual std::string getStateID() const { return s_menuID; }
 	bool stopUpdate = false;
 	std::vector<GameObject*> m_obj;
+	int count;
 private:
 	static const std::string s_menuID;
 	static PopupPauseState* s_pInstance;
+	static void justText();
+	static void s_resume();
+	static void s_stop();
+	bool finish;
+
 };

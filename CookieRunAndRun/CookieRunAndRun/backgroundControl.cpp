@@ -16,5 +16,5 @@ void BackgroundControl::update() {
 	}
 }
 void BackgroundControl::clean() {
-
+	m_back.clear();
 }
