@@ -12,12 +12,12 @@ public:
 		}
 		return s_pInstance;
 	}
-	void initAction();
+	void initAction(string run, string jump, string slide);
 	void draw();
 	void update();
 	void clean();
 	std::vector<GameObject*> m_action;
-	int getPosition();
+	int getAction();
 private:
 	static PlayerAction* s_pInstance;
 };

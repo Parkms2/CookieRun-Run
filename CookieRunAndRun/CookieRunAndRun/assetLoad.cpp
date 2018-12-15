@@ -3,6 +3,9 @@
 assetLoad* assetLoad::s_pInstance = 0;
 
 bool assetLoad::assetLoadsPlay(SDL_Renderer* m_pRenderer) {
+	//ÄíÅ° ÃÊ±âÈ­
+	if (!TheTextureManager::Instance()->load("assets/characters/nullCookie.png", "nullCookie", m_pRenderer)) return false;
+
 	//±âº» ÄíÅ°
 	if (!TheTextureManager::Instance()->load("assets/characters/basicsCookie/run.png", "basicCookieRun", m_pRenderer)) return false;
 	if (!TheTextureManager::Instance()->load("assets/characters/basicsCookie/jump1-1.png", "basicCookieJump1", m_pRenderer)) return false;	
@@ -36,8 +39,11 @@ bool assetLoad::assetLoadsMenu(SDL_Renderer* m_pRenderer) {
 	if (!TheTextureManager::Instance()->load("assets/button/mainmenu/4recode.png", "4recode", m_pRenderer)) return false;
 
 	//¸ŞÀÎ ¸Ş´º ÄíÅ°
-	if (!TheTextureManager::Instance()->load("assets/characters/basicsCookie/lobbyBasic1.png", "lobbyBasic1", m_pRenderer)) return false;
-	if (!TheTextureManager::Instance()->load("assets/characters/basicsCookie/lobbyBasic2.png", "lobbyBasic2", m_pRenderer)) return false;
+		//±âº» ÄíÅ°
+		if (!TheTextureManager::Instance()->load("assets/characters/basicsCookie/lobbyBasic1.png", "lobbyBasic1", m_pRenderer)) return false;
+		if (!TheTextureManager::Instance()->load("assets/characters/basicsCookie/lobbyBasic2.png", "lobbyBasic2", m_pRenderer)) return false;
+
+		// xx ÄíÅ°
 
 	return true;
 }

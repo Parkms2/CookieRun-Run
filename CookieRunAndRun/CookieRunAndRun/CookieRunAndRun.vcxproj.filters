@@ -43,6 +43,9 @@
     <Filter Include="cookie\basicCookie">
       <UniqueIdentifier>{eaca0a52-cee8-4e49-ac07-440a952160ba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="state\mainmenu\popupChangeCookie">
+      <UniqueIdentifier>{fedb6e05-5d73-4916-a280-cfefa32849f5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -78,9 +81,6 @@
     <ClCompile Include="backgroundControl.cpp">
       <Filter>background</Filter>
     </ClCompile>
-    <ClCompile Include="playerAction.cpp">
-      <Filter>cookie</Filter>
-    </ClCompile>
     <ClCompile Include="GameStateMachine.cpp">
       <Filter>state</Filter>
     </ClCompile>
@@ -109,6 +109,12 @@
       <Filter>state\popupPause</Filter>
     </ClCompile>
     <ClCompile Include="player.cpp">
+      <Filter>cookie\basicCookie</Filter>
+    </ClCompile>
+    <ClCompile Include="chooseCookie.cpp">
+      <Filter>cookie</Filter>
+    </ClCompile>
+    <ClCompile Include="playerAction.cpp">
       <Filter>cookie\basicCookie</Filter>
     </ClCompile>
   </ItemGroup>
@@ -146,9 +152,6 @@
     <ClInclude Include="backgroundControl.h">
       <Filter>background</Filter>
     </ClInclude>
-    <ClInclude Include="playerAction.h">
-      <Filter>cookie</Filter>
-    </ClInclude>
     <ClInclude Include="GameState.h">
       <Filter>state</Filter>
     </ClInclude>
@@ -183,6 +186,12 @@
       <Filter>state\popupPause</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
+      <Filter>cookie\basicCookie</Filter>
+    </ClInclude>
+    <ClInclude Include="chooseCookie.h">
+      <Filter>cookie</Filter>
+    </ClInclude>
+    <ClInclude Include="playerAction.h">
       <Filter>cookie\basicCookie</Filter>
     </ClInclude>
   </ItemGroup>
