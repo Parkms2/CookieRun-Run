@@ -25,14 +25,14 @@ void PopupPauseState::render() {
 
 bool PopupPauseState::onEnter()
 {
-	int x = dynamic_cast<SDLGameObject*>(PlayerAction::Instance()->m_action[PlayerAction::Instance()->getPosition()])->m_position.getX();
-	int y = dynamic_cast<SDLGameObject*>(PlayerAction::Instance()->m_action[PlayerAction::Instance()->getPosition()])->m_position.getY();
+	int x = dynamic_cast<SDLGameObject*>(PlayerAction::Instance()->m_action[PlayerAction::Instance()->getAction()])->m_position.getX();
+	int y = dynamic_cast<SDLGameObject*>(PlayerAction::Instance()->m_action[PlayerAction::Instance()->getAction()])->m_position.getY();
 
 	TheAssetLoad::Instance()->assetLoadsPopupPause(TheGame::Instance()->getRenderer());
 	sshot = SDL_CreateRGBSurface(0, 1280, 720, 32, 0x00ff0000, 0x0000ff00, 0x000000ff, 0xff000000);
 	sshot2 = SDL_CreateRGBSurface(0, 1280, 720, 32, 0x00ff0000, 0x0000ff00, 0x000000ff, 0xff000000);
 	SDL_RenderReadPixels(TheGame::Instance()->getRenderer(), NULL, SDL_PIXELFORMAT_ARGB8888, sshot->pixels, sshot->pitch);
-	TheBlur::Instance()->fastblur(sshot, 13);
+	TheBlur::Instance()->fastblur(sshot, 9);
 	TheTextureManager::Instance()->screenShotLoad("sshot", sshot, TheGame::Instance()->getRenderer());
 	SDL_RenderReadPixels(TheGame::Instance()->getRenderer(), NULL, SDL_PIXELFORMAT_ARGB8888, sshot2->pixels, sshot2->pitch);
 	TheTextureManager::Instance()->screenShotLoad("sshot2", sshot2, TheGame::Instance()->getRenderer());

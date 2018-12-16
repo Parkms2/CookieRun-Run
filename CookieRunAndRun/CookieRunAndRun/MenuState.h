@@ -19,10 +19,20 @@ public:
 	}
 
 	std::vector<GameObject*> main_bg;
+	std::vector<GameObject*> m_effect;
 	mainMenu* loadingBg;
 	mainMenu* loadingBar;
+
+	int effectRender;
+	int effectPosition;
 private:
 	static const std::string s_menuID;
 	static MenuState* s_pInstance;
 	static void gamestart();
+	static void changeCookie();
+	static void dnsQKfakdrpa();
+	static void recode();
+
+	int nextTime = 0;
+	int timeLeft = 300;
 };

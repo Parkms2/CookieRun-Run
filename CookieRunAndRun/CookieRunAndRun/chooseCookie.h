@@ -11,7 +11,7 @@ public:
 		}
 		return s_pInstance;
 	}
-	void initAction(string a, string b, string slide);
+	void initAction();
 	//string run;
 	//string jump;
 	//string slide;

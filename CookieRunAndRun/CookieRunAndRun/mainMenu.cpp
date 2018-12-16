@@ -1,4 +1,5 @@
 #include"mainMenu.h"
+#include"MenuState.h"
 
 mainMenu::mainMenu(const LoaderParams* pParams) : SDLGameObject(pParams)
 {
@@ -10,6 +11,16 @@ void mainMenu::draw()
 }
 void mainMenu::update()
 {
+	for (int i = 0; i < MenuState::Instance()->m_effect.size(); i++) {
+		if (dynamic_cast<SDLGameObject*>(MenuState::Instance()->m_effect[i])->m_width == 32
+			|| dynamic_cast<SDLGameObject*>(MenuState::Instance()->m_effect[i])->m_width == 35
+			|| dynamic_cast<SDLGameObject*>(MenuState::Instance()->m_effect[i])->m_width == 38) {
+			if (dynamic_cast<SDLGameObject*>(MenuState::Instance()->m_effect[i])->m_position.getY() <= 240) {
+				MenuState::Instance()->m_effect.erase(MenuState::Instance()->m_effect.begin() + i);
+			}
+			else dynamic_cast<SDLGameObject*>(MenuState::Instance()->m_effect[i])->m_velocity.setY(-1);
+		}
+	}
 	SDLGameObject::update();
 }
 //void mainMenu::update2()

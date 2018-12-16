@@ -20,6 +20,7 @@ public:
 	int getAction();
 private:
 	static PlayerAction* s_pInstance;
+
 };
 
 typedef PlayerAction ThePlayerAction;

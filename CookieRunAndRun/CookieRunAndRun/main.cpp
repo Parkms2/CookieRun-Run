@@ -1,9 +1,11 @@
 #include"game.h"
+#include<ctime>
 
 Game* g_game = 0;
 
 int main(int argc, char* argv[])
 {
+	srand((unsigned int)time(0));
 	const int FPS = 60;
 	const int DELAY_TIME = 1000.0f / FPS;
 	Uint32 frameStart, frameTime;

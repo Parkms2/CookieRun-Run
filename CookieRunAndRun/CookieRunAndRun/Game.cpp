@@ -1,5 +1,6 @@
 #include "game.h"
 #include<SDL_image.h>
+#include"popUpCCState.h"
 
 Game* Game::s_pInstance = 0;
 
@@ -9,9 +10,10 @@ bool Game::init(const char*title, int xpos, int ypos, int width, int height, boo
 		if (m_pWindow != 0) {
 			m_pRenderer = SDL_CreateRenderer(m_pWindow, -1, 0);
 			m_bRunning = true;
+
+			PopupCCState::Instance()->selectBasicC = true;
 			m_pGameStateMachine = new GameStateMachine();
 			m_pGameStateMachine->firstState();
-
 		}
 		else return false;
 	}

@@ -10,15 +10,14 @@ public:
 	virtual void draw();
 	virtual void draw2();
 	virtual void update();
-	virtual void cookieUpdate();//행동별 이미지 변경?
 	virtual void clean();
 	Vector2D m_position;
-	int m_width;
-	int m_height;
-protected:
 	Vector2D m_velocity;
 	Vector2D m_acceleration;
-	int m_currentRow;
+	int m_width;
+	int m_height;
 	int m_currentFrame;
+protected:
+	int m_currentRow;
 	std::string m_textureID;
 };

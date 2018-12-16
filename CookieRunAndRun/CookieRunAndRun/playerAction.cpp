@@ -1,10 +1,10 @@
 #include"playerAction.h"
 PlayerAction* PlayerAction::s_pInstance = 0;
 
-void PlayerAction::initAction() {
-	m_action.push_back(new Player(new LoaderParams(300, 508, 150, 100, "basicCookieRun")));	//벡터 순서대로 행동이 정해져있음
-	m_action.push_back(new Player(new LoaderParams(300, 508, 150, 100, "basicCookieJump1")));	//player에 있어야하나?
-	m_action.push_back(new Player(new LoaderParams(300, 508, 150, 100, "basicCookieSlide")));
+void PlayerAction::initAction(string run, string jump, string slide) {
+	m_action.push_back(new Player(new LoaderParams(300, 508, 150, 100, run)));	//벡터 순서대로 행동이 정해져있음
+	m_action.push_back(new Player(new LoaderParams(300, 508, 150, 100, jump)));	//player에 있어야하나?
+	m_action.push_back(new Player(new LoaderParams(300, 508, 150, 100, slide)));
 	TheInputHandler::Instance()->jump = false;
 	TheInputHandler::Instance()->slide = false;
 	TheInputHandler::Instance()->doubleJump = false;
@@ -22,11 +22,12 @@ void PlayerAction::draw() {
 	}
 }
 void PlayerAction::update() {
-	m_action[0]->update();
-	m_action[1]->update();
-	m_action[2]->update();
+	for (int i = 0; i < m_action.size(); i++) {
+		m_action[i]->update();
+	}
+
 }
-int PlayerAction::getPosition() {
+int PlayerAction::getAction() {
 	if (TheInputHandler::Instance()->jump) {	//점프모션
 		return 1;
 	}

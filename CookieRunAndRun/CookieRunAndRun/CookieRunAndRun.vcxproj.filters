@@ -40,11 +40,14 @@
     <Filter Include="blur">
       <UniqueIdentifier>{1138c52f-ca57-48d3-8683-cc61cfe0693e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="cookie\basicCookie">
-      <UniqueIdentifier>{eaca0a52-cee8-4e49-ac07-440a952160ba}</UniqueIdentifier>
-    </Filter>
     <Filter Include="state\mainmenu\popupChangeCookie">
       <UniqueIdentifier>{fedb6e05-5d73-4916-a280-cfefa32849f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cookie\Cookie">
+      <UniqueIdentifier>{eaca0a52-cee8-4e49-ac07-440a952160ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="state\InGame\result">
+      <UniqueIdentifier>{c1ad7637-871e-468c-97e6-281c0aa9b0f1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -109,13 +112,31 @@
       <Filter>state\popupPause</Filter>
     </ClCompile>
     <ClCompile Include="player.cpp">
-      <Filter>cookie\basicCookie</Filter>
+      <Filter>cookie\Cookie</Filter>
     </ClCompile>
     <ClCompile Include="chooseCookie.cpp">
       <Filter>cookie</Filter>
     </ClCompile>
     <ClCompile Include="playerAction.cpp">
-      <Filter>cookie\basicCookie</Filter>
+      <Filter>cookie\Cookie</Filter>
+    </ClCompile>
+    <ClCompile Include="popUpCCState.cpp">
+      <Filter>state\mainmenu\popupChangeCookie</Filter>
+    </ClCompile>
+    <ClCompile Include="popupCCBg.cpp">
+      <Filter>state\mainmenu\popupChangeCookie</Filter>
+    </ClCompile>
+    <ClCompile Include="inGameUi.cpp">
+      <Filter>state\InGame</Filter>
+    </ClCompile>
+    <ClCompile Include="UiBg.cpp">
+      <Filter>state\InGame</Filter>
+    </ClCompile>
+    <ClCompile Include="resultState.cpp">
+      <Filter>state\InGame\result</Filter>
+    </ClCompile>
+    <ClCompile Include="resultBg.cpp">
+      <Filter>state\InGame\result</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -186,13 +207,31 @@
       <Filter>state\popupPause</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>cookie\basicCookie</Filter>
+      <Filter>cookie\Cookie</Filter>
     </ClInclude>
     <ClInclude Include="chooseCookie.h">
       <Filter>cookie</Filter>
     </ClInclude>
     <ClInclude Include="playerAction.h">
-      <Filter>cookie\basicCookie</Filter>
+      <Filter>cookie\Cookie</Filter>
+    </ClInclude>
+    <ClInclude Include="popUpCCState.h">
+      <Filter>state\mainmenu\popupChangeCookie</Filter>
+    </ClInclude>
+    <ClInclude Include="popupCCBg.h">
+      <Filter>state\mainmenu\popupChangeCookie</Filter>
+    </ClInclude>
+    <ClInclude Include="inGameUi.h">
+      <Filter>state\InGame</Filter>
+    </ClInclude>
+    <ClInclude Include="UiBg.h">
+      <Filter>state\InGame</Filter>
+    </ClInclude>
+    <ClInclude Include="resultState.h">
+      <Filter>state\InGame\result</Filter>
+    </ClInclude>
+    <ClInclude Include="resultBg.h">
+      <Filter>state\InGame\result</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

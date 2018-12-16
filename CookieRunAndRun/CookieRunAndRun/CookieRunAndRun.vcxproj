@@ -135,11 +135,13 @@
     <ClCompile Include="backgroundControl.cpp" />
     <ClCompile Include="blur.cpp" />
     <ClCompile Include="button.cpp" />
+    <ClCompile Include="chooseCookie.cpp" />
     <ClCompile Include="floor.cpp" />
     <ClCompile Include="floorControl.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameStateMachine.cpp" />
+    <ClCompile Include="inGameUi.cpp" />
     <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainMenu.cpp" />
@@ -149,9 +151,14 @@
     <ClCompile Include="player.cpp" />
     <ClCompile Include="playerAction.cpp" />
     <ClCompile Include="PlayState.cpp" />
+    <ClCompile Include="popupCCBg.cpp" />
+    <ClCompile Include="popUpCCState.cpp" />
     <ClCompile Include="popupPauseState.cpp" />
+    <ClCompile Include="resultBg.cpp" />
+    <ClCompile Include="resultState.cpp" />
     <ClCompile Include="SDLGameObject.cpp" />
     <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="UiBg.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="assetLoad.h" />
@@ -159,12 +166,14 @@
     <ClInclude Include="backgroundControl.h" />
     <ClInclude Include="blur.h" />
     <ClInclude Include="button.h" />
+    <ClInclude Include="chooseCookie.h" />
     <ClInclude Include="floor.h" />
     <ClInclude Include="floorControl.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="GameStateMachine.h" />
+    <ClInclude Include="inGameUi.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="LoaderParams.h" />
     <ClInclude Include="mainMenu.h" />
@@ -174,9 +183,14 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="playerAction.h" />
     <ClInclude Include="PlayState.h" />
+    <ClInclude Include="popupCCBg.h" />
+    <ClInclude Include="popUpCCState.h" />
     <ClInclude Include="popupPauseState.h" />
+    <ClInclude Include="resultBg.h" />
+    <ClInclude Include="resultState.h" />
     <ClInclude Include="SDLGameObject.h" />
     <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="UiBg.h" />
     <ClInclude Include="Vector2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

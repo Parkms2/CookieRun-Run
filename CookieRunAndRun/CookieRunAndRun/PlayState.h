@@ -15,7 +15,12 @@ public:
 		}
 		return s_pInstance;
 	}
+	int hp = 744;
+	int score = 0;
 private:
 	static const std::string s_playID;
 	static PlayState* s_pInstance;
+
+	int nextTime = 0;
+	int timeLeft = 400;
 };

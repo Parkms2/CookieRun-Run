@@ -2,6 +2,7 @@
 #include"button.h"
 #include"Game.h"
 #include"popupPauseState.h"
+#include"PlayState.h"
 pauseButtonControl* pauseButtonControl::s_pInstance = 0;
 
 void pauseButtonControl::initButton() {
@@ -39,6 +40,6 @@ void pauseButtonControl::s_resume() {
 	TheGame::Instance()->getStateMachine()->finishPopupState(PopupPauseState::Instance());
 }
 void pauseButtonControl::s_stop() {
-	TheGame::Instance()->getStateMachine()->changeState(MenuState::Instance());
+	PlayState::Instance()->hp = 0;
 	PopupPauseState::Instance()->delayOnExit();
 }

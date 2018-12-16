@@ -12,6 +12,7 @@ public:
 	bool assetLoadsPlay(SDL_Renderer* m_pRenderer);
 	bool assetLoadsMenu(SDL_Renderer* m_pRenderer);
 	bool assetLoadsPopupPause(SDL_Renderer* m_pRenderer);
+	bool assetResultState(SDL_Renderer* m_pRenderer);
 private:
 	static assetLoad* s_pInstance;
 };
