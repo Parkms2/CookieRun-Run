@@ -56,7 +56,7 @@ bool PlayState::onEnter()
 	TheFloorControl::Instance()->initFloor();
 	TheBackgroundControl::Instance()->initBackground();
 	TheInGameUi::Instance()->initInGameUi();
-	//hp = 746;
+	//hp = 743;
 	hp = 50;
 	score = 0;
 	std::cout << "entering PlayState\n";

@@ -90,5 +90,6 @@ bool assetLoad::assetResultState(SDL_Renderer* m_pRenderer) {
 	if (!TheTextureManager::Instance()->load("assets/result/result1.png", "result1", m_pRenderer)) return false;
 	if (!TheTextureManager::Instance()->load("assets/result/result2.png", "result2", m_pRenderer)) return false;
 	if (!TheTextureManager::Instance()->load("assets/result/result3.png", "result3", m_pRenderer)) return false;
+	if (!TheTextureManager::Instance()->load("assets/result/result4.png", "result4", m_pRenderer)) return false;
 	return true;
 }

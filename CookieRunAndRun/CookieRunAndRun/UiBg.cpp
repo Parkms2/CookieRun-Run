@@ -18,6 +18,7 @@ void UiBg::update()
 
 		}
 	}
+	dynamic_cast<SDLGameObject*>(InGameUi::Instance()->m_UI[2])->m_width = PlayState::Instance()->hp;
 	SDLGameObject::update();
 
 }
