@@ -2,6 +2,7 @@
 #include"GameState.h"
 #include"mainMenu.h"
 #include<vector>
+#include<SDL_ttf.h>
 class ResultState : public GameState
 {
 public:
@@ -20,6 +21,17 @@ public:
 	virtual std::string getStateID() const { return s_menuID; }
 	std::vector<GameObject*> m_obj;
 	bool resultTime = false;
+	int myscore;
+
+public:
+	TTF_Font * font;
+	SDL_Color color;
+	SDL_Surface * surface;
+	SDL_Texture * texture;
+	SDL_Rect dstrect;
+	SDL_Surface * surface2;
+	SDL_Texture * texture2;
+	SDL_Rect dstrect2;
 private:
 	static const std::string s_menuID;
 	static ResultState* s_pInstance;

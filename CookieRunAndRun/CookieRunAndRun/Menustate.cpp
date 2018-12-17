@@ -50,8 +50,8 @@ bool MenuState::onEnter()
 	main_bg.push_back(new mainMenu(new LoaderParams(-60, 0, 1340, 720, "mainLobby_bg")));
 	main_bg.push_back(new MenuButton(new LoaderParams(1280, 130, 340, 82, "1gamestart"), gamestart));
 	main_bg.push_back(new MenuButton(new LoaderParams(1280, 230, 340, 82, "2changeCookie"), changeCookie));
-	main_bg.push_back(new MenuButton(new LoaderParams(1280, 330, 340, 82, "3dnsQKfakdrpa"), dnsQKfakdrpa));
-	main_bg.push_back(new MenuButton(new LoaderParams(1280, 430, 340, 82, "4recode"), recode));
+	//main_bg.push_back(new MenuButton(new LoaderParams(1280, 330, 340, 82, "3dnsQKfakdrpa"), dnsQKfakdrpa));
+	//main_bg.push_back(new MenuButton(new LoaderParams(1280, 430, 340, 82, "4recode"), recode));
 
 
 	m_effect.push_back(new mainMenu(new LoaderParams(455, 180, 350, 350, "effect1")));

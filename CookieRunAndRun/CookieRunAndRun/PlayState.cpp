@@ -20,9 +20,6 @@ void PlayState::update()
 		TheFloorControl::Instance()->update();
 		ThechooseCookie::Instance()->update();
 		TheInGameUi::Instance()->update();
-		if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_ESCAPE)) {
-			TheGame::Instance()->getStateMachine()->PopupState(PopupPauseState::Instance());
-		}
 		if (nextTime < SDL_GetTicks()) {
 			hp -= 6;
 			score += 100;
@@ -56,8 +53,8 @@ bool PlayState::onEnter()
 	TheFloorControl::Instance()->initFloor();
 	TheBackgroundControl::Instance()->initBackground();
 	TheInGameUi::Instance()->initInGameUi();
-	//hp = 743;
-	hp = 50;
+	hp = 743;
+	//hp = 50;
 	score = 0;
 	std::cout << "entering PlayState\n";
 	return true;

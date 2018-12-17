@@ -236,9 +236,6 @@
     <ClInclude Include="resultBg.h">
       <Filter>state\InGame\result</Filter>
     </ClInclude>
-    <ClInclude Include="Han2Unicode.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="TextTTF.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>

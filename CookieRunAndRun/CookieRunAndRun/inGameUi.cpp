@@ -1,10 +1,9 @@
+#pragma warning(disable : 4996)
 #include"inGameUi.h"
 #include"UiBg.h"
 #include"button.h"
 #include"Game.h"
 #include"popupPauseState.h"
-#include"Han2Unicode.h"
-
 InGameUi* InGameUi::s_pInstance = 0;
 
 void InGameUi::initInGameUi() {
@@ -13,16 +12,17 @@ void InGameUi::initInGameUi() {
 	m_UI.push_back(new UiBg(new LoaderParams(291, 62, 743, 30, "hpBar")));
 	m_UI.push_back(new UiBg(new LoaderParams(1023, 54, 23, 45, "removeHp")));
 
-	font = TTF_OpenFont("assets/font/batang.ttc", 25);
+
+	font = TTF_OpenFont("assets/font/RixToyStory.ttf", 25);
 	color = { 255, 255, 255 };
-	wchar_t unicode[100] = L"와 한글 ㅠㅠㅠ";
+	wchar_t unicode[100] = L"현재 점수";
 	surface = TTF_RenderUNICODE_Solid(font, (Uint16*)unicode, color);
 	texture = SDL_CreateTextureFromSurface(TheGame::Instance()->getRenderer(), surface);
 	SDL_RenderCopy(TheGame::Instance()->getRenderer(), texture, NULL, NULL);
 	int texW = 0;
 	int texH = 0;
 	SDL_QueryTexture(texture, NULL, NULL, &texW, &texH);
-	dstrect = { 0, 0, texW, texH };
+	dstrect = { 1190, 80, texW, texH };
 
 }
 void InGameUi::draw()
@@ -30,12 +30,27 @@ void InGameUi::draw()
 	for (std::vector<GameObject*>::size_type i = 0; i < m_UI.size(); i++) {
 		m_UI[i]->draw();
 	}
-	SDL_RenderCopy(TheGame::Instance()->getRenderer(), texture, NULL, &dstrect);
+	if (!PopupPauseState::Instance()->stopUpdate) {	//일시정지면 실행
+		SDL_RenderCopy(TheGame::Instance()->getRenderer(), texture, NULL, &dstrect);
+		SDL_RenderCopy(TheGame::Instance()->getRenderer(), texture2, NULL, &dstrect2);
+	}
 }
 void InGameUi::update()
 {
 	for (std::vector<GameObject*>::size_type i = 0; i < m_UI.size(); i++) {
 		m_UI[i]->update();
+	}
+	if (!PopupPauseState::Instance()->stopUpdate) {	//일시정지면 실행
+		char s1[100];
+		int num1 = PlayState::Instance()->score;
+		sprintf(s1, "%d", num1);
+		surface2 = TTF_RenderText_Solid(font, (char*)s1, color);
+		texture2 = SDL_CreateTextureFromSurface(TheGame::Instance()->getRenderer(), surface2);
+		SDL_RenderCopy(TheGame::Instance()->getRenderer(), texture2, NULL, NULL);
+		int texW2 = 0;
+		int texH2 = 0;
+		SDL_QueryTexture(texture2, NULL, NULL, &texW2, &texH2);
+		dstrect2 = { 1190, 110, texW2, texH2 };
 	}
 }
 void InGameUi::clean() {

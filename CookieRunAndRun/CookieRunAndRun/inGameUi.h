@@ -27,6 +27,10 @@ public:
 	SDL_Texture * texture;
 	SDL_Rect dstrect;
 
+	SDL_Surface * surface2;
+	SDL_Texture * texture2;
+	SDL_Rect dstrect2;
+
 private:
 	static InGameUi* s_pInstance;
 };

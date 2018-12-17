@@ -22,5 +22,5 @@ private:
 	static PlayState* s_pInstance;
 
 	int nextTime = 0;
-	int timeLeft = 400;
+	int timeLeft = 200;
 };
