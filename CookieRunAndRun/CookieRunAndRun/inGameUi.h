@@ -2,7 +2,7 @@
 #include<vector>
 #include"SDLGameObject.h"
 #include"TextureManager.h"
-
+#include<SDL_ttf.h>
 class InGameUi {
 public:
 	InGameUi() {}
@@ -20,6 +20,13 @@ public:
 	void clean();
 	static void pauseBtton();
 	std::vector<GameObject*> m_UI;
+
+	TTF_Font * font;
+	SDL_Color color;
+	SDL_Surface * surface;
+	SDL_Texture * texture;
+	SDL_Rect dstrect;
+
 private:
 	static InGameUi* s_pInstance;
 };

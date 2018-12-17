@@ -1,11 +1,12 @@
 #include"game.h"
 #include<ctime>
-
+#include<SDL_ttf.h>
 Game* g_game = 0;
 
 int main(int argc, char* argv[])
 {
 	srand((unsigned int)time(0));
+	TTF_Init();
 	const int FPS = 60;
 	const int DELAY_TIME = 1000.0f / FPS;
 	Uint32 frameStart, frameTime;
@@ -39,6 +40,7 @@ int main(int argc, char* argv[])
 		std::cout << "game init failure - " << SDL_GetError() << "\n";
 		return -1;
 	}
+	TTF_Quit();
 	std::cout << "game closing...\n";
 	TheGame::Instance()->clean();
 	return 0;
